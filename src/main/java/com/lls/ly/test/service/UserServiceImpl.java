@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
  * Date: 2018/10/21
  * Time: 14:57
  */
-public class UserService implements IUserService {
+public class UserServiceImpl implements IUserService {
 
+    @Override
     public User getDemoUser() {
         return User.builder().id(1L).name("abc").sex(0).age(18).build();
     }
