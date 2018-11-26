@@ -1,18 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:idubbo="http://code.alibabatech.com/schema/idubbo"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
                         http://www.springframework.org/schema/aop
 						http://www.springframework.org/schema/aop/spring-aop.xsd
+                        http://code.alibabatech.com/schema/idubbo
+                        http://code.alibabatech.com/schema/idubbo/idubbo.xsd
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     <!-- 引入属性配置文件 -->
     <context:component-scan base-package="com.lls">
     </context:component-scan>
-    <aop:aspectj-autoproxy proxy-target-class="true" />
+    <aop:aspectj-autoproxy proxy-target-class="true" >
+    </aop:aspectj-autoproxy>
     <aop:config proxy-target-class="true" />
-    <bean id="userService" class="com.lls.ly.test.service.UserServiceImpl">
+    <bean id="userServiceImpl" class="com.lls.ly.test.service.UserServiceImpl">
     </bean>
+    <alias name="userServiceImpl" alias="userService"/>
+    <idubbo:application name="${dubbo.application.name}"/>
 </beans>
