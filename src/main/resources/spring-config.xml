@@ -11,10 +11,8 @@
                         http://www.springframework.org/schema/context
                         http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     <!-- 引入属性配置文件 -->
-    <context:component-scan base-package="com.lls">
-    </context:component-scan>
-    <aop:aspectj-autoproxy proxy-target-class="true" >
-    </aop:aspectj-autoproxy>
+    <context:component-scan base-package="com.lls"/>
+    <aop:aspectj-autoproxy proxy-target-class="true"/>
     <aop:config proxy-target-class="true" />
     <bean id="userServiceImpl" class="com.lls.ly.test.service.UserServiceImpl">
     </bean>
